@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Route, Switch } from 'react-router-dom'
+import Navbar from './element/Navbar'
+import './App.css'
+import Dashboard from './element/Dashboard'
+import TopicDetail from './element/TopicDetail'
+import BookMark from './element/BookMark'
+import { PageNotFound } from './element/Processing'
+import SearchResults from './element/SearchResults'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <Switch>
+        <Route path="/" component={Dashboard} exact />
+        <Route path="/search/:search" component={SearchResults} />
+        <Route path="/topic/:id" component={TopicDetail} />
+        <Route path="/bookmark" component={BookMark} />
+        <Route component={PageNotFound} />
+      </Switch>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,0 +1,21 @@
+.topic-layout {
+    display: inline-grid;
+    grid-template-columns: 70% 30%;
+    width: 100%;
+    margin-top: 3vw;
+}
+
+@media screen and (max-width: 1024px) {
+    .topic-layout {
+        grid-template-columns: auto;
+    }
+}
+
+.right-topic {
+    padding-top: 10vw;
+}
+
+.right-topic img {
+    width: 20vw;
+    height: 15vw;
+}
